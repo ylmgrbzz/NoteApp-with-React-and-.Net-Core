@@ -44,5 +44,12 @@ namespace NoteApp.Controllers
             return Ok();
         }
 
+        [HttpPut("{id}")]
+        public IActionResult UpdateNotes(int id, Note note)
+        {
+            _noteServices.UpdateNotes(id, note);
+            return Ok();
+        }
+
     }
 }
