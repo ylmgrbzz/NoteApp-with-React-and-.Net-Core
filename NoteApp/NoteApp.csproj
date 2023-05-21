@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NotesCore\NotesCore.csproj" />
     <ProjectReference Include="..\NotesDB\NotesDB.csproj" />
   </ItemGroup>
 
