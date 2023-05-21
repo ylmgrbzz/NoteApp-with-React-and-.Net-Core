@@ -20,7 +20,29 @@ namespace NoteApp.Controllers
         [HttpPost]
         public IActionResult CreateNote(Note note)
         {
-            return Ok(_noteServices.CreateNote(note));
+            //return Ok(_noteServices.CreateNote(note));
+            var newNote = _noteServices.CreateNote(note);
+            return CreatedAtRoute("GetNotes", new { id = newNote.Id }, newNote);
         }
+
+        [HttpGet("{id}", Name = "GetNotes")]
+        public IActionResult GetNote(int id)
+        {
+            return Ok(_noteServices.GetNote(id));
+        }
+
+        [HttpGet]
+        public IActionResult GetNotes()
+        {
+            return Ok(_noteServices.GetNotes());
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteNotes(int id)
+        {
+            _noteServices.DeleteNotes(id);
+            return Ok();
+        }
+
     }
 }
