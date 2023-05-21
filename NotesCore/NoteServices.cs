@@ -20,7 +20,6 @@ namespace NotesCore
             var note = _context.Notes.First(n => n.Id == id);
             _context.Notes.Remove(note);
             _context.SaveChanges();
-
         }
         public Note GetNote(int id)
         {
