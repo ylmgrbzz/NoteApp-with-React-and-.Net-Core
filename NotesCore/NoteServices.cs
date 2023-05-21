@@ -2,7 +2,7 @@
 
 namespace NotesCore
 {
-    public class NoteServices
+    public class NoteServices : INoteServices
     {
         private AppDbContext _context;
         public NoteServices(AppDbContext context)
